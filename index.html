@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">MyBrand</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button id="theme-toggle">🌞</button>
+        </nav>
+    </header>
+    
+    <section id="home" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Welcome to My World</h1>
+            <p id="greeting"></p>
+        </div>
+    </section>
+    
+    <section id="about" class="content-section">
+        <h2>About Me</h2>
+        <div class="about-container">
+            <img src="profile.jpg" alt="My Photo" class="profile-pic">
+            <p>A passionate developer with an eye for design and a love for innovation.</p>
+        </div>
+    </section>
+    
+    <section id="projects" class="content-section">
+        <h2>Projects Portfolio</h2>
+        <div id="project-filters" class="filters">
+            <button data-filter="all">All</button>
+            <button data-filter="web">Web</button>
+            <button data-filter="data">Data</button>
+            <button data-filter="ai">AI</button>
+        </div>
+        <div id="project-list" class="project-grid">
+            <!-- Projects dynamically added here -->
+        </div>
+    </section>
+    
+    <section id="blog" class="content-section">
+        <h2>Blog</h2>
+        <div id="blog-posts" class="blog-list">
+            <!-- Blog posts dynamically loaded here -->
+        </div>
+    </section>
+    
+    <section id="contact" class="content-section">
+        <h2>Contact Me</h2>
+        <form id="contact-form" class="form-styled">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" required></textarea>
+            
+            <button type="submit" class="btn">Send</button>
+        </form>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 My Personal Website | Designed with ❤️</p>
+    </footer>
+</body>
+</html>
