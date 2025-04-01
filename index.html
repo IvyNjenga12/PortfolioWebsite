@@ -8,63 +8,59 @@
     <script defer src="script.js"></script>
 </head>
 <body>
-    <header class="navbar">
-        <h1 class="logo">MyBrand</h1>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">MyBrand</div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#portfolio">Projects</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#blog">Blog</a></li>
             <li><a href="#contact">Contact</a></li>
             <li><button id="theme-toggle">🌙</button></li>
         </ul>
-    </header>
+    </nav>
 
-    <section id="home" class="hero">
+    <!-- Hero Section -->
+    <header id="home" class="hero-section">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h2 id="greeting"></h2>
-            <p>Welcome to my portfolio website!</p>
-            <a href="#portfolio" class="explore-btn">Explore</a>
+            <h1 id="greeting" class="animated-text">Welcome!</h1>
+            <a href="#portfolio" class="explore-btn">Explore My Work</a>
         </div>
-    </section>
+    </header>
 
+    <!-- About Section -->
     <section id="about" class="content-section">
         <h2 class="section-title">About Me</h2>
-        <p>Passionate about web development, design, and creating stunning digital experiences.</p>
+        <p>A brief bio goes here...</p>
     </section>
 
+    <!-- Portfolio Section -->
     <section id="portfolio" class="content-section">
         <h2 class="section-title">Projects</h2>
-        <div class="portfolio-filters">
-            <button class="filter-btn" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="web">Web</button>
-            <button class="filter-btn" data-filter="ai">AI</button>
-        </div>
-        <div class="portfolio-grid">
-            <div class="portfolio-item" data-category="web">Project 1</div>
-            <div class="portfolio-item" data-category="ai">Project 2</div>
-            <div class="portfolio-item" data-category="web">Project 3</div>
+        <div id="portfolio-items">
+            <!-- Projects will load dynamically from script.js -->
         </div>
     </section>
 
+    <!-- Blog Section -->
     <section id="blog" class="content-section">
         <h2 class="section-title">Blog</h2>
         <div id="blog-list"></div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact" class="content-section">
-        <h2 class="section-title">Contact</h2>
+        <h2 class="section-title">Contact Me</h2>
         <form id="contact-form">
-            <input type="text" placeholder="Name" required>
-            <input type="email" placeholder="Email" required>
-            <textarea placeholder="Message" required></textarea>
-            <button type="submit" class="submit-btn">Send</button>
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit" class="submit-btn">Send Message</button>
         </form>
     </section>
 
-    <footer>
-        <p>© 2025 MyBrand. All rights reserved.</p>
-    </footer>
 </body>
 </html>
