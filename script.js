@@ -1,50 +1,47 @@
-// Dynamic Greeting
-function getGreeting() {
+document.addEventListener("DOMContentLoaded", function() {
+    // Dynamic Greeting
+    const greetingElement = document.getElementById("greeting");
     const hours = new Date().getHours();
-    const greeting = hours < 12 ? 'Good Morning' : hours < 18 ? 'Good Afternoon' : 'Good Evening';
-    document.querySelector('.hero-content h1').textContent = greeting + ' - Welcome to My Portfolio';
-}
-window.onload = getGreeting;
+    let greetingText = "Welcome!";
+    if (hours < 12) greetingText = "Good Morning!";
+    else if (hours < 18) greetingText = "Good Afternoon!";
+    else greetingText = "Good Evening!";
+    greetingElement.textContent = greetingText;
 
-// Theme Toggle (Light/Dark Mode)
-const toggleButton = document.getElementById('theme-toggle');
-const storedTheme = localStorage.getItem('theme');
-if (storedTheme) {
-    document.body.classList.add(storedTheme);
-}
-
-toggleButton.addEventListener('click', () => {
-    document.body.classList.toggle('dark-theme');
-    localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark-theme' : 'light-theme');
-});
-
-// Portfolio Filter
-function filterProjects(category) {
-    const projects = document.querySelectorAll('.project');
-    projects.forEach(project => {
-        if (category === 'all' || project.classList.contains(category)) {
-            project.style.display = 'block';
-        } else {
-            project.style.display = 'none';
-        }
+    // Theme Toggle
+    const themeToggle = document.getElementById("theme-toggle");
+    themeToggle.addEventListener("click", function() {
+        document.body.classList.toggle("light-mode");
     });
-}
 
-// Blog Manager (Example JSON)
-const blogPosts = [
-    { title: "My Latest Project", date: "March 2025", content: "Details about the project..." },
-    { title: "Design Trends 2025", date: "February 2025", content: "What's trending in design..." }
-];
-function loadBlogs() {
-    const blogList = document.getElementById('blog-list');
+    // Portfolio Filter
+    const filters = document.querySelectorAll(".filter-btn");
+    const items = document.querySelectorAll(".portfolio-item");
+
+    filters.forEach(filter => {
+        filter.addEventListener("click", function() {
+            const category = filter.getAttribute("data-filter");
+            items.forEach(item => {
+                item.style.display = category === "all" || item.getAttribute("data-category") === category ? "block" : "none";
+            });
+        });
+    });
+
+    // Blog Manager
+    const blogPosts = [
+        { title: "My First Blog Post", content: "This is an amazing post!" },
+        { title: "Another Day in Web Dev", content: "Frontend is fun!" }
+    ];
+    const blogList = document.getElementById("blog-list");
     blogPosts.forEach(post => {
-        const postElement = document.createElement('article');
-        postElement.innerHTML = `
-            <h3>${post.title}</h3>
-            <p>${post.date}</p>
-            <p>${post.content}</p>
-        `;
-        blogList.appendChild(postElement);
+        let div = document.createElement("div");
+        div.innerHTML = `<h3>${post.title}</h3><p>${post.content}</p>`;
+        blogList.appendChild(div);
     });
-}
-window.onload = loadBlogs;
+
+    // Form Validation
+    document.getElementById("contact-form").addEventListener("submit", function(e) {
+        e.preventDefault();
+        alert("Form submitted successfully!");
+    });
+});
