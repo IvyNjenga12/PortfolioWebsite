@@ -3,81 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Website</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Your Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">MyBrand</div>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">Your Name</div>
+        <nav>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Me</a></li>
-                <li><a href="#projects">Projects</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#blog">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <button id="theme-toggle">🌞</button>
         </nav>
     </header>
-    
+
+    <!-- Hero Section -->
     <section id="home" class="hero-section">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="animated-text">Welcome to My World</h1>
-            <p id="greeting"></p>
-            <a href="#projects" class="btn explore-btn">Explore My Work</a>
+            <h1 class="animated-text">Welcome to My Portfolio</h1>
+            <p>Let's build something amazing together.</p>
+            <a href="#portfolio" class="explore-btn">Explore My Work</a>
         </div>
     </section>
-    
+
+    <!-- About Section -->
     <section id="about" class="content-section">
         <h2 class="section-title">About Me</h2>
-        <div class="about-container">
-            <img src="profile.jpg" alt="My Photo" class="profile-pic">
-            <p class="about-text">A passionate developer with an eye for design and a love for innovation.</p>
+        <img src="profile.jpg" alt="Profile Picture" class="profile-img">
+        <p>I'm a passionate web developer with experience in HTML, CSS, and JavaScript...</p>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="content-section">
+        <h2 class="section-title">My Projects</h2>
+        <div class="portfolio-filter">
+            <button onclick="filterProjects('all')">All</button>
+            <button onclick="filterProjects('web')">Web</button>
+            <button onclick="filterProjects('data')">Data</button>
+        </div>
+        <div id="projects" class="projects-container">
+            <!-- Project Items here -->
         </div>
     </section>
-    
-    <section id="projects" class="content-section">
-        <h2 class="section-title">Projects Portfolio</h2>
-        <div id="project-filters" class="filters">
-            <button data-filter="all">All</button>
-            <button data-filter="web">Web</button>
-            <button data-filter="data">Data</button>
-            <button data-filter="ai">AI</button>
-        </div>
-        <div id="project-list" class="project-grid">
-            <!-- Projects dynamically added here -->
-        </div>
-    </section>
-    
+
+    <!-- Blog Section -->
     <section id="blog" class="content-section">
-        <h2 class="section-title">Blog</h2>
-        <div id="blog-posts" class="blog-list">
-            <!-- Blog posts dynamically loaded here -->
-        </div>
+        <h2 class="section-title">Latest Blog Posts</h2>
+        <div id="blog-list"></div>
     </section>
-    
+
+    <!-- Contact Section -->
     <section id="contact" class="content-section">
         <h2 class="section-title">Contact Me</h2>
         <form id="contact-form" class="form-styled">
-            <label for="name">Name:</label>
-            <input type="text" id="name" required>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" required>
-            
-            <label for="message">Message:</label>
-            <textarea id="message" required></textarea>
-            
-            <button type="submit" class="btn submit-btn">Send</button>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit" class="submit-btn">Send Message</button>
         </form>
     </section>
-    
+
     <footer>
-        <p>&copy; 2025 My Personal Website | Designed with ❤️</p>
+        <p>&copy; 2025 Your Name. All rights reserved.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
