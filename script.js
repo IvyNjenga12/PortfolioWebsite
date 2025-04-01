@@ -6,6 +6,18 @@ function getGreeting() {
 }
 window.onload = getGreeting;
 
+// Theme Toggle (Light/Dark Mode)
+const toggleButton = document.getElementById('theme-toggle');
+const storedTheme = localStorage.getItem('theme');
+if (storedTheme) {
+    document.body.classList.add(storedTheme);
+}
+
+toggleButton.addEventListener('click', () => {
+    document.body.classList.toggle('dark-theme');
+    localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark-theme' : 'light-theme');
+});
+
 // Portfolio Filter
 function filterProjects(category) {
     const projects = document.querySelectorAll('.project');
@@ -26,13 +38,13 @@ const blogPosts = [
 function loadBlogs() {
     const blogList = document.getElementById('blog-list');
     blogPosts.forEach(post => {
-        const postElement = document.createElement('div');
-        postElement.classList.add('blog-post');
+        const postElement = document.createElement('article');
         postElement.innerHTML = `
             <h3>${post.title}</h3>
             <p>${post.date}</p>
             <p>${post.content}</p>
         `;
         blogList.appendChild(postElement);
+    });
 }
 window.onload = loadBlogs;
