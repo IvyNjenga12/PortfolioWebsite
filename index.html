@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
     <!-- Navbar -->
     <header class="navbar">
-        <div class="logo">Ivy Nyagachaki Njenga</div>
+        <div class="logo">Your Name</div>
         <nav>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Me</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#blog">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -26,7 +27,7 @@
     <section id="home" class="hero-section">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="animated-text">Welcome to My Portfolio</h1>
+            <h1 id="greeting" class="animated-text"></h1>
             <p>Let's build something amazing together.</p>
             <a href="#portfolio" class="explore-btn">Explore My Work</a>
         </div>
@@ -36,7 +37,7 @@
     <section id="about" class="content-section">
         <h2 class="section-title">About Me</h2>
         <img src="profile.jpg" alt="Profile Picture" class="profile-img">
-        <p>I'm a passionate web developer with experience in HTML, CSS, and JavaScript...</p>
+        <p>I'm a passionate web developer with expertise in HTML, CSS, and JavaScript...</p>
     </section>
 
     <!-- Portfolio Section -->
@@ -44,12 +45,10 @@
         <h2 class="section-title">My Projects</h2>
         <div class="portfolio-filter">
             <button onclick="filterProjects('all')">All</button>
-            <button onclick="filterProjects('web')">Assingments</button>
-            <button onclick="filterProjects('data')">Practice</button>
+            <button onclick="filterProjects('web')">Web</button>
+            <button onclick="filterProjects('data')">Data</button>
         </div>
-        <div id="projects" class="projects-container">
-            <!-- Project Items here -->
-        </div>
+        <div id="projects" class="projects-container"></div>
     </section>
 
     <!-- Blog Section -->
@@ -70,9 +69,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 Ivy Nyagachaki Njenga. All rights reserved.</p>
+        <p>&copy; 2025 Your Name. All rights reserved.</p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
