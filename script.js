@@ -1,63 +1,38 @@
 // Dynamic Greeting
-function updateGreeting() {
-    let hour = new Date().getHours();
-    let greeting = "Welcome!";
-    if (hour < 12) greeting = "Good Morning!";
-    else if (hour < 18) greeting = "Good Afternoon!";
-    else greeting = "Good Evening!";
-    document.getElementById("greeting").textContent = greeting;
+function getGreeting() {
+    const hours = new Date().getHours();
+    const greeting = hours < 12 ? 'Good Morning' : hours < 18 ? 'Good Afternoon' : 'Good Evening';
+    document.querySelector('.hero-content h1').textContent = greeting + ' - Welcome to My Portfolio';
 }
-updateGreeting();
+window.onload = getGreeting;
 
-// Portfolio Items
-const projects = [
-    { title: "Web App", category: "Web" },
-    { title: "AI Model", category: "AI" },
-    { title: "Data Analysis", category: "Data" }
-];
-
-function loadProjects() {
-    let container = document.getElementById("portfolio-items");
-    container.innerHTML = "";
+// Portfolio Filter
+function filterProjects(category) {
+    const projects = document.querySelectorAll('.project');
     projects.forEach(project => {
-        let div = document.createElement("div");
-        div.textContent = project.title;
-        container.appendChild(div);
+        if (category === 'all' || project.classList.contains(category)) {
+            project.style.display = 'block';
+        } else {
+            project.style.display = 'none';
+        }
     });
 }
-loadProjects();
 
-// Blog Posts
+// Blog Manager (Example JSON)
 const blogPosts = [
-    { title: "First Blog Post", content: "This is my first post!" },
-    { title: "Second Blog Post", content: "Another blog update." }
+    { title: "My Latest Project", date: "March 2025", content: "Details about the project..." },
+    { title: "Design Trends 2025", date: "February 2025", content: "What's trending in design..." }
 ];
-
-function loadBlogPosts() {
-    let container = document.getElementById("blog-list");
-    container.innerHTML = "";
+function loadBlogs() {
+    const blogList = document.getElementById('blog-list');
     blogPosts.forEach(post => {
-        let div = document.createElement("div");
-        div.innerHTML = `<h3>${post.title}</h3><p>${post.content}</p>`;
-        container.appendChild(div);
-    });
+        const postElement = document.createElement('div');
+        postElement.classList.add('blog-post');
+        postElement.innerHTML = `
+            <h3>${post.title}</h3>
+            <p>${post.date}</p>
+            <p>${post.content}</p>
+        `;
+        blogList.appendChild(postElement);
 }
-loadBlogPosts();
-
-// Form Validation
-document.getElementById("contact-form").addEventListener("submit", function (e) {
-    e.preventDefault();
-    let name = document.getElementById("name").value.trim();
-    let email = document.getElementById("email").value.trim();
-    if (name === "" || email === "") {
-        alert("All fields are required!");
-        return;
-    }
-    alert("Message sent!");
-});
-
-// Theme Toggle
-const themeToggle = document.getElementById("theme-toggle");
-themeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("light-theme");
-});
+window.onload = loadBlogs;
