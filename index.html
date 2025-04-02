@@ -26,10 +26,9 @@
     <section id="home" class="hero-section">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="animated-text"></h1>
+            <h1 class="animated-text">Welcome to My Portfolio</h1>
             <p>Let's build something amazing together.</p>
             <a href="#portfolio" class="explore-btn">Explore My Work</a>
-            <div id="clock"></div>
         </div>
     </section>
 
@@ -38,25 +37,6 @@
         <h2 class="section-title">About Me</h2>
         <img src="profile.jpg" alt="Profile Picture" class="profile-img">
         <p>I'm a passionate web developer with experience in HTML, CSS, and JavaScript...</p>
-
-        <!-- Skills Accordion -->
-        <div class="accordion">
-            <button class="accordion-btn">Skills</button>
-            <div class="accordion-content">
-                <div class="progress-bar">
-                    <p>HTML</p>
-                    <div class="progress"><div class="html"></div></div>
-                </div>
-                <div class="progress-bar">
-                    <p>CSS</p>
-                    <div class="progress"><div class="css"></div></div>
-                </div>
-                <div class="progress-bar">
-                    <p>JavaScript</p>
-                    <div class="progress"><div class="js"></div></div>
-                </div>
-            </div>
-        </div>
     </section>
 
     <!-- Portfolio Section -->
@@ -68,25 +48,9 @@
             <button onclick="filterProjects('data')">Data</button>
         </div>
         <div id="projects" class="projects-container">
-            <div class="project web" onclick="openModal('Project 1')">
-                <img src="project1.jpg" alt="Project 1">
-                <p>Project 1</p>
-            </div>
-            <div class="project data" onclick="openModal('Project 2')">
-                <img src="project2.jpg" alt="Project 2">
-                <p>Project 2</p>
-            </div>
+            <!-- Project Items here -->
         </div>
     </section>
-
-    <!-- Modal -->
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2 id="modal-title"></h2>
-            <p>Details about the project...</p>
-        </div>
-    </div>
 
     <!-- Blog Section -->
     <section id="blog" class="content-section">
