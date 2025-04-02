@@ -6,36 +6,34 @@ function getGreeting() {
 }
 window.onload = getGreeting;
 
-// Live Clock
-setInterval(() => {
-    document.getElementById("clock").textContent = new Date().toLocaleTimeString();
-}, 1000);
-
 // Portfolio Filter
 function filterProjects(category) {
-    document.querySelectorAll('.project').forEach(project => {
-        project.style.display = (category === 'all' || project.classList.contains(category)) ? 'block' : 'none';
+    const projects = document.querySelectorAll('.project');
+    projects.forEach(project => {
+        if (category === 'all' || project.classList.contains(category)) {
+            project.style.display = 'block';
+        } else {
+            project.style.display = 'none';
+        }
     });
 }
 
-// Modal Popup
-function openModal(title) {
-    document.getElementById('modal-title').textContent = title;
-    document.getElementById('modal').style.display = "block";
+// Blog Manager (Example JSON)
+const blogPosts = [
+    { title: "My Latest Project", date: "March 2025", content: "Details about the project..." },
+    { title: "Design Trends 2025", date: "February 2025", content: "What's trending in design..." }
+];
+function loadBlogs() {
+    const blogList = document.getElementById('blog-list');
+    blogPosts.forEach(post => {
+        const postElement = document.createElement('div');
+        postElement.classList.add('blog-post');
+        postElement.innerHTML = `
+            <h3>${post.title}</h3>
+            <p>${post.date}</p>
+            <p>${post.content}</p>
+        `;
+        blogList.appendChild(postElement);
+    });
 }
-function closeModal() {
-    document.getElementById('modal').style.display = "none";
-}
-
-// Accordion
-document.querySelector('.accordion-btn').addEventListener('click', function () {
-    let content = this.nextElementSibling;
-    content.style.display = content.style.display === 'block' ? 'none' : 'block';
-});
-
-// Drag & Drop (Example)
-const projectsContainer = document.getElementById("projects");
-new Sortable(projectsContainer, {
-    animation: 150,
-    ghostClass: 'sortable-ghost'
-});
+window.onload = loadBlogs;
