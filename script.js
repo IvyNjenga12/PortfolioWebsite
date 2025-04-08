@@ -1,10 +1,8 @@
-
 function updateGreeting() {
     const hour = new Date().getHours();
     const greeting = hour < 12 ? 'Good Morning' : hour < 18 ? 'Good Afternoon' : 'Good Evening';
     document.querySelector('.hero-content h1').textContent = `${greeting} - Welcome to My Portfolio`;
 }
-
 
 function filterProjects(category) {
     const projects = document.querySelectorAll('.project');
@@ -12,7 +10,6 @@ function filterProjects(category) {
         project.style.display = (category === 'all' || project.classList.contains(category)) ? 'block' : 'none';
     });
 }
-
 
 const blogPosts = [
     { title: "My Latest Project", date: "March 2025", content: "Details about the project..." },
@@ -28,7 +25,6 @@ function loadBlogs() {
         blogList.appendChild(postEl);
     });
 }
-
 
 document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', e => {
@@ -54,7 +50,6 @@ function updateActiveNav() {
     });
 }
 
-
 function toggleTheme() {
     document.body.classList.toggle('light-theme');
     localStorage.setItem('theme', document.body.classList.contains('light-theme') ? 'light' : 'dark');
@@ -66,7 +61,6 @@ function loadTheme() {
         document.body.classList.add('light-theme');
     }
 }
-
 
 function initLightbox() {
     const images = document.querySelectorAll('.project-img');
@@ -89,16 +83,15 @@ function initLightbox() {
     });
 }
 
-
 function openModal(content) {
     const modal = document.getElementById('modal');
     modal.querySelector('.modal-body').innerHTML = content;
     modal.style.display = 'block';
 }
+
 function closeModal() {
     document.getElementById('modal').style.display = 'none';
 }
-
 
 function animateProgressBars() {
     const bars = document.querySelectorAll('.progress-bar');
@@ -107,7 +100,6 @@ function animateProgressBars() {
         bar.style.width = value + '%';
     });
 }
-
 
 function startCountdown(targetDate) {
     const countdown = document.getElementById('countdown');
@@ -128,7 +120,6 @@ function startCountdown(targetDate) {
         countdown.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
     }, 1000);
 }
-
 
 function enableDragAndDrop() {
     const container = document.getElementById('projects');
@@ -156,7 +147,6 @@ function enableDragAndDrop() {
         }
     });
 }
-
 
 window.addEventListener('DOMContentLoaded', () => {
     updateGreeting();
