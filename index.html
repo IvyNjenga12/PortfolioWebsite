@@ -1,77 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ivy Njenga`s Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <header class="navbar">
-        <div class="logo">Ivy Njenga</div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#blog">Blogs</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
  
-    <section id="home" class="hero-section">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="animated-text">Welcome to My Portfolio</h1>
-            <p>Let's build something amazing together.</p>
-            <a href="#portfolio" class="explore-btn">Explore My Work</a>
+  <nav class="navbar">
+    <div class="logo">My Portfolio</div>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button onclick="toggleTheme()">🌓</button>
+  </nav>
+
+
+  <section id="hero" class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Welcome to My Portfolio</h1>
+      <p>Designer | Developer | Creator</p>
+    </div>
+  </section>
+
+
+  <section id="about" class="about">
+    <h2 class="section-title">About Me</h2>
+    <img src="profile.jpg" alt="Profile" class="profile-img">
+    <p>I’m passionate about coding and design...</p>
+    <div class="skills">
+      <h3>Skills</h3>
+      <div class="skill">
+        <p>HTML</p>
+        <div class="progress-bar-container">
+          <div class="progress-bar" data-progress="90"></div>
         </div>
-    </section>
-
-    <section id="about" class="content-section">
-        <h2 class="section-title">About Me</h2>
-        <img src="profile.jpg" alt="Profile Picture" class="profile-img">
-        <p>I'm a passionate web developer with experience in HTML, CSS, and JavaScript...</p>
-    </section>
-
-
-    <section id="portfolio" class="content-section">
-        <h2 class="section-title">My Projects</h2>
-        <div class="portfolio-filter">
-            <button onclick="filterProjects('all')">All</button>
-            <button onclick="filterProjects('web')">Web</button>
-            <button onclick="filterProjects('data')">Data</button>
+      </div>
+      <div class="skill">
+        <p>JavaScript</p>
+        <div class="progress-bar-container">
+          <div class="progress-bar" data-progress="80"></div>
         </div>
-        <div id="projects" class="projects-container">
-         
-        </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
 
-    <section id="blog" class="content-section">
-        <h2 class="section-title">Latest Blog Posts</h2>
-        <div id="blog-list"></div>
-    </section>
+  <section id="portfolio" class="portfolio">
+    <h2 class="section-title">Portfolio</h2>
+    <div class="portfolio-filter">
+      <button onclick="filterProjects('all')">All</button>
+      <button onclick="filterProjects('web')">Web</button>
+      <button onclick="filterProjects('design')">Design</button>
+    </div>
 
-  
-    <section id="contact" class="content-section">
-        <h2 class="section-title">Contact Me</h2>
-        <form id="contact-form" class="form-styled">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit" class="submit-btn">Send Message</button>
-        </form>
-    </section>
+    <div id="projects">
+      <div class="project web" draggable="true">
+        <img src="img1.jpg" alt="Web Project" class="project-img">
+        <h3>Web Project 1</h3>
+        <button onclick="openModal('Details about Web Project 1')">View Details</button>
+      </div>
+      <div class="project design" draggable="true">
+        <img src="img2.jpg" alt="Design Project" class="project-img">
+        <h3>Design Project 1</h3>
+        <button onclick="openModal('Details about Design Project 1')">View Details</button>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <p>&copy; Ivy Njenga. All rights reserved.</p>
-    </footer>
 
-    <script src="script.js"></script>
+  <section id="blog" class="blog">
+    <h2 class="section-title">Latest Blog Posts</h2>
+    <div id="blog-list"></div>
+  </section>
+
+  <section id="countdown-section" class="countdown">
+    <h2 class="section-title">Countdown to Launch</h2>
+    <p id="countdown">Loading...</p>
+  </section>
+
+ 
+  <section id="contact" class="contact">
+    <h2 class="section-title">Contact</h2>
+    <form class="form-styled">
+      <input type="text" placeholder="Your Name">
+      <input type="email" placeholder="Your Email">
+      <textarea placeholder="Your Message"></textarea>
+      <button type="submit" class="submit-btn">Send</button>
+    </form>
+  </section>
+
+  <div id="modal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <span onclick="closeModal()" style="cursor:pointer;">&times;</span>
+      <div class="modal-body"></div>
+    </div>
+  </div>
+
+
+  <div id="lightbox" class="lightbox"></div>
+
+
+  <footer>
+    &copy; 2025 My Portfolio. All rights reserved.
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
