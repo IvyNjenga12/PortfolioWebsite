@@ -73,6 +73,135 @@ body {
 }
 
 
+#about {
+    padding: 100px 50px;
+    background-color: #f5f1e3;
+    text-align: center;
+    color: #1c1b18;
+}
+
+#about .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #e0a96d;
+}
+
+#about .profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: 20px;
+    border: 4px solid #e0a96d;
+}
+
+
+#portfolio {
+    padding: 100px 50px;
+    background-color: #1c1b18;
+    text-align: center;
+}
+
+#portfolio .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #e0a96d;
+}
+
+.portfolio-filter {
+    margin-bottom: 20px;
+}
+
+.portfolio-filter button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #e0a96d;
+    color: #1c1b18;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: transform 0.3s ease-in-out;
+}
+
+.portfolio-filter button:hover {
+    transform: scale(1.1);
+}
+
+
+#blog {
+    padding: 100px 50px;
+    background-color: #f5f1e3;
+    text-align: center;
+}
+
+#blog .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #e0a96d;
+}
+
+.blog-post {
+    background-color: #fff;
+    padding: 30px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post h3 {
+    font-size: 1.8rem;
+    color: #1c1b18;
+}
+
+.blog-post p {
+    font-size: 1.1rem;
+    color: #2b2a27;
+}
+
+
+#contact {
+    padding: 100px 50px;
+    background-color: #1c1b18;
+    color: #f5f1e3;
+    text-align: center;
+}
+
+#contact .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #e0a96d;
+}
+
+.form-styled input,
+.form-styled textarea {
+    width: 80%;
+    padding: 15px;
+    margin: 15px 0;
+    border: 2px solid #e0a96d;
+    border-radius: 8px;
+    background: #2b2a27;
+    color: #f5f1e3;
+    font-size: 1rem;
+}
+
+.submit-btn {
+    background: linear-gradient(90deg, #e0a96d, #c39b77);
+    padding: 12px 25px;
+    border: none;
+    color: #1c1b18;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.submit-btn:hover {
+    transform: scale(1.1);
+}
+
+
 footer {
     background: rgba(40, 39, 36, 0.9);
     text-align: center;
