@@ -1,4 +1,3 @@
-
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -6,8 +5,13 @@ body {
     background-color: #1c1b18;
     color: #f5f1e3;
     overflow-x: hidden;
+    transition: background-color 0.3s, color 0.3s;
 }
 
+body.light-theme {
+    background-color: #f5f1e3;
+    color: #1c1b18;
+}
 
 .navbar {
     display: flex;
@@ -40,7 +44,6 @@ body {
 .nav-links a:hover {
     color: #e0a96d;
 }
-
 
 .hero-section {
     height: 100vh;
@@ -78,13 +81,11 @@ body {
     animation: fadeInDown 1.5s ease-in-out;
 }
 
-
 .section-title {
     font-size: 2.5rem;
     margin-bottom: 30px;
     color: #e0a96d;
 }
-
 
 .about {
     padding: 100px 50px;
@@ -100,7 +101,6 @@ body {
     margin-top: 20px;
     border: 4px solid #e0a96d;
 }
-
 
 .portfolio {
     padding: 100px 50px;
@@ -129,7 +129,6 @@ body {
     transform: scale(1.1);
 }
 
-
 .blog {
     padding: 100px 50px;
     background-color: #f5f1e3;
@@ -153,7 +152,6 @@ body {
     font-size: 1.1rem;
     color: #2b2a27;
 }
-
 
 .contact {
     padding: 100px 50px;
@@ -190,7 +188,6 @@ body {
     transform: scale(1.1);
 }
 
-
 footer {
     background: rgba(40, 39, 36, 0.9);
     text-align: center;
@@ -198,7 +195,6 @@ footer {
     font-size: 1rem;
     position: relative;
 }
-
 
 @keyframes fadeIn {
     from { opacity: 0; }
