@@ -21,11 +21,13 @@ body {
     z-index: 1000;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
+
 .nav-links {
     list-style: none;
     display: flex;
     gap: 25px;
 }
+
 .nav-links a {
     color: #f5f1e3;
     text-decoration: none;
@@ -34,6 +36,7 @@ body {
     letter-spacing: 1px;
     transition: color 0.3s ease-in-out;
 }
+
 .nav-links a:hover {
     color: #e0a96d;
 }
@@ -50,6 +53,7 @@ body {
     color: #f5f1e3;
     animation: fadeIn 2s ease-in-out;
 }
+
 .hero-overlay {
     position: absolute;
     top: 0;
@@ -58,10 +62,12 @@ body {
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
 }
+
 .hero-content {
     position: relative;
     z-index: 10;
 }
+
 .animated-text {
     font-size: 3.5rem;
     font-weight: 700;
@@ -73,20 +79,21 @@ body {
 }
 
 
-#about {
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #e0a96d;
+}
+
+
+.about {
     padding: 100px 50px;
     background-color: #f5f1e3;
     text-align: center;
     color: #1c1b18;
 }
 
-#about .section-title {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    color: #e0a96d;
-}
-
-#about .profile-img {
+.profile-img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
@@ -95,16 +102,10 @@ body {
 }
 
 
-#portfolio {
+.portfolio {
     padding: 100px 50px;
     background-color: #1c1b18;
     text-align: center;
-}
-
-#portfolio .section-title {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    color: #e0a96d;
 }
 
 .portfolio-filter {
@@ -129,16 +130,10 @@ body {
 }
 
 
-#blog {
+.blog {
     padding: 100px 50px;
     background-color: #f5f1e3;
     text-align: center;
-}
-
-#blog .section-title {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    color: #e0a96d;
 }
 
 .blog-post {
@@ -160,17 +155,11 @@ body {
 }
 
 
-#contact {
+.contact {
     padding: 100px 50px;
     background-color: #1c1b18;
     color: #f5f1e3;
     text-align: center;
-}
-
-#contact .section-title {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    color: #e0a96d;
 }
 
 .form-styled input,
@@ -215,6 +204,7 @@ footer {
     from { opacity: 0; }
     to { opacity: 1; }
 }
+
 @keyframes fadeInDown {
     from {
         opacity: 0;
