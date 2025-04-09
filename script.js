@@ -160,3 +160,21 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 window.addEventListener('scroll', updateActiveNav);
+function animateProgressBars() {
+  const bars = document.querySelectorAll('.progress-bar');
+  bars.forEach(bar => {
+    const progress = bar.getAttribute('data-progress');
+    bar.style.width = progress + '%';
+  });
+}
+
+window.addEventListener('scroll', () => {
+  const skillsSection = document.querySelector('.skills');
+  const sectionTop = skillsSection.getBoundingClientRect().top;
+  const screenHeight = window.innerHeight;
+
+  if (sectionTop < screenHeight - 100) {
+    animateProgressBars();
+  }
+});
+
